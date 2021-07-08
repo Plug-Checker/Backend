@@ -6,7 +6,7 @@ import com.plugchecker.backend.dto.request.PlugNameRequest;
 import com.plugchecker.backend.dto.response.PlugAllResponse;
 import com.plugchecker.backend.dto.response.PlugIdNameResponse;
 import com.plugchecker.backend.dto.response.PlugIdResponse;
-import com.plugchecker.backend.service.PlugService;
+import com.plugchecker.backend.service.AppService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("/plug")
 public class PlugController {
 
-    private final PlugService plugService;
+    private final AppService plugService;
 
     @GetMapping
     public List<PlugAllResponse> getPlugAll() {

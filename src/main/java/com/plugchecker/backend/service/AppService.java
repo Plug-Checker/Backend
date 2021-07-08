@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class PlugService {
+public class AppService {
 
     private final PlugRepository plugRepository;
 
