@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -37,17 +38,17 @@ public class PlugController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public PlugIdResponse registPlug(@RequestBody PlugNameRequest request) {
+    public PlugIdResponse registPlug(@Valid @RequestBody PlugNameRequest request) {
         return plugService.registPlug(request.getName());
     }
 
     @PatchMapping
-    public void changePlug(@RequestBody PlugIdNameRequest request) {
+    public void changePlug(@Valid @RequestBody PlugIdNameRequest request) {
         plugService.changePlug(request);
     }
 
     @DeleteMapping
-    public void deletePlug(@RequestBody PlugIdRequest request) {
+    public void deletePlug(@Valid @RequestBody PlugIdRequest request) {
         plugService.deletePlug(request.getId());
     }
 }
