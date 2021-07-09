@@ -1,5 +1,7 @@
-package com.plugchecker.backend.domain;
+package com.plugchecker.backend.domain.app;
 
+import com.plugchecker.backend.domain.Plug;
+import com.plugchecker.backend.domain.PlugRepository;
 import com.plugchecker.backend.dto.request.PlugIdNameRequest;
 import com.plugchecker.backend.dto.request.PlugNameRequest;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package com.plugchecker.backend.domain;
+package com.plugchecker.backend.domain.app;
 
 import com.plugchecker.backend.ApiTest;
 import com.plugchecker.backend.dto.request.PlugIdNameRequest;
