@@ -1,7 +1,6 @@
 buildscript {
     ext {
         lombokVersion = '1.18.18'
-        swaggerVersion = '3.0.0'
         junitVersion = '5.6.0'
         assertjVersion = '3.19.0'
     }
@@ -36,9 +35,6 @@ dependencies {
 
     // validation
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-
-    // swagger
-    implementation group: 'io.springfox', name: 'springfox-boot-starter', version: swaggerVersion
 
     // jpa
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
