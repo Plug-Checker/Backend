@@ -54,10 +54,15 @@ public class AppService {
     }
 
     public void changePlug(PlugIdNameRequest request) {
-        Plug plug = plugRepository.findById(request.getId())
-                .orElseThrow(()-> new NotFoundException(request.getId()));
+        String name = request.getName();
+        int id = request.getId();
+        if(plugRepository.findByName(name).isPresent()) {
+            throw new AlreadyExistException(name);
+        }
+        Plug plug = plugRepository.findById(id)
+                .orElseThrow(()-> new NotFoundException(id));
 
-        plug.setName(request.getName());
+        plug.setName(name);
         plugRepository.save(plug);
     }
 

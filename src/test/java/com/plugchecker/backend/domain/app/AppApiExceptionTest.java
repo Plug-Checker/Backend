@@ -36,6 +36,28 @@ public class AppApiExceptionTest extends AppApiRequest {
     }
 
     @Test
+    @DisplayName("멀티탭 변경하기_AlreadyExistException")
+    void changePlug_AlreadyExistException() throws Exception {
+        // given
+        Plug plug1 = Plug.builder()
+                .name("테스트 멀티탭1")
+                .build();
+        plugRepository.save(plug1);
+        Plug plug2 = Plug.builder()
+                .name("테스트 멀티탭2")
+                .build();
+        plugRepository.save(plug2);
+        PlugIdNameRequest request = new PlugIdNameRequest(plug1.getId(), plug2.getName());
+
+        // when
+        ResultActions resultActions = requestChangePlug(request);
+
+        // then
+        resultActions.andExpect(status().is4xxClientError())
+                .andDo(print());
+    }
+
+    @Test
     @DisplayName("멀티탭 변경하기_NotFoundException")
     void changePlug_NotFoundException() throws Exception {
         // given
