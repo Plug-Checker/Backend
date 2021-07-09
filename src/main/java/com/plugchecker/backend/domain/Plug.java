@@ -19,6 +19,7 @@ public class Plug {
     @Column(nullable = false, unique = true)
     private String name;
 
+    @Setter
     @Column(nullable = true)
     private boolean electricity;
 
