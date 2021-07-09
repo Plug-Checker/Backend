@@ -1,6 +1,8 @@
-package com.plugchecker.backend.domain;
+package com.plugchecker.backend.domain.app;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.plugchecker.backend.domain.Plug;
+import com.plugchecker.backend.domain.PlugRepository;
 import com.plugchecker.backend.dto.request.PlugIdNameRequest;
 import com.plugchecker.backend.dto.request.PlugIdRequest;
 import com.plugchecker.backend.dto.request.PlugNameRequest;
