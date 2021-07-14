@@ -54,13 +54,13 @@ public class PlugController {
         plugService.deletePlug(request.getId());
     }
 
-    @PostMapping("/on")
-    public void plugOn(@Valid @RequestBody PlugIdRequest request) {
-        hardwareService.plugOn(request.getId());
+    @PostMapping("/on/{id}")
+    public void plugOn(@PathVariable("id") int id) {
+        hardwareService.plugOn(4);
     }
 
-    @PostMapping("/off")
-    public void plugOff(@Valid @RequestBody PlugIdRequest request) {
-        hardwareService.plugOff(request.getId());
+    @PostMapping("/off/{id}")
+    public void plugOff(@PathVariable("id") int id) {
+        hardwareService.plugOff(id);
     }
 }
