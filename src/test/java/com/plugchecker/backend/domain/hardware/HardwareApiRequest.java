@@ -8,11 +8,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 public class HardwareApiRequest extends ApiTest {
 
-    protected ResultActions requestPlugOn(PlugIdRequest request) throws Exception {
-        return requestMvc(post("/plug/on"), request);
+    protected ResultActions requestPlugOn(int id) throws Exception {
+        return requestMvc(post("/plug/on/" + id));
     }
 
-    protected ResultActions requestPlugOff(PlugIdRequest request) throws Exception {
-        return requestMvc(post("/plug/off"), request);
+    protected ResultActions requestPlugOff(int id) throws Exception {
+        return requestMvc(post("/plug/off/"+id));
     }
 }

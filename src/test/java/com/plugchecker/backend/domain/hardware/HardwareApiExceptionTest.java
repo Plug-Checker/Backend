@@ -19,10 +19,9 @@ public class HardwareApiExceptionTest extends HardwareApiRequest {
     void plugOn_NotFoundException() throws Exception {
         // given
         int id = -1;
-        PlugIdRequest request = new PlugIdRequest(id);
 
         // when
-        ResultActions resultActions = requestPlugOn(request);
+        ResultActions resultActions = requestPlugOn(id);
 
         // then
         resultActions.andExpect(status().is4xxClientError())
@@ -34,10 +33,9 @@ public class HardwareApiExceptionTest extends HardwareApiRequest {
     void plugOff_NotFoundException() throws Exception {
         // given
         int id = -1;
-        PlugIdRequest request = new PlugIdRequest(id);
 
         // when
-        ResultActions resultActions = requestPlugOff(request);
+        ResultActions resultActions = requestPlugOff(id);
 
         // then
         resultActions.andExpect(status().is4xxClientError())

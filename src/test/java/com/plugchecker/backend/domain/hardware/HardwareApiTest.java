@@ -27,10 +27,9 @@ public class HardwareApiTest extends HardwareApiRequest {
                 .build();
         plugRepository.save(plug);
         int id = plug.getId();
-        PlugIdRequest request = new PlugIdRequest(id);
 
         // when
-        ResultActions resultActions = requestPlugOn(request);
+        ResultActions resultActions = requestPlugOn(id);
 
         // then
         resultActions.andExpect(status().isOk())
@@ -51,10 +50,9 @@ public class HardwareApiTest extends HardwareApiRequest {
                 .build();
         plugRepository.save(plug);
         int id = plug.getId();
-        PlugIdRequest request = new PlugIdRequest(id);
 
         // when
-        ResultActions resultActions = requestPlugOff(request);
+        ResultActions resultActions = requestPlugOff(id);
 
         // then
         resultActions.andExpect(status().isOk())
