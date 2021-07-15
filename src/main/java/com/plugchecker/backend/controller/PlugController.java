@@ -56,7 +56,7 @@ public class PlugController {
 
     @PostMapping("/on/{id}")
     public void plugOn(@PathVariable("id") int id) {
-        hardwareService.plugOn(4);
+        hardwareService.plugOn(id);
     }
 
     @PostMapping("/off/{id}")
